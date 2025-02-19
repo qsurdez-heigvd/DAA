@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding">10dp</dimen>
+    <dimen name="row_height">25dp</dimen>
+    <dimen name="margin_barrier">4dp</dimen>
+    <dimen name="textViewPadding">8dp</dimen>
+    <dimen name="radioButtonPadding">3dp</dimen>
+</resources>

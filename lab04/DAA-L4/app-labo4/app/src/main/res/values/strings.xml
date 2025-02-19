@@ -1,0 +1,42 @@
+<resources>
+    <!-- Authors: REDACTED, REDACTED, Quentin Surdez -->
+    <string name="app_name">Labo 4</string>
+
+    <!-- Menus -->
+    <string name="menu_notes">Notes</string>
+    <string name="menu_sort">Trier</string>
+    <string name="sort_creation_date">Creation Date</string>
+    <string name="sort_schedule_date">ETA</string>
+    <string name="action_generate">Generate</string>
+    <string name="action_delete">Delete</string>
+    <string name="controls_action_text">Actions</string>
+    <string name="controls_counter_default">No notes</string>
+
+    <!-- Note item-->
+    <string name="icon_note_description">Icon of a specific note type</string>
+    <string name="note_text_title_default">Title</string>
+    <string name="note_text_description_default">Description</string>
+    <string name="note_text_schedule_default">Date</string>
+
+    <!-- CalendarConverter -->
+    <string name="late">Late</string>
+    <string name="today">Today</string>
+    <string name="tomorrow">Tomorrow</string>
+    <string name="note_icon_description_schedule">Clock icon</string>
+    <plurals name="days">
+        <item quantity="one">%d day</item>
+        <item quantity="other">%d days</item>
+    </plurals>
+    <plurals name="weeks">
+        <item quantity="one">%d week</item>
+        <item quantity="other">%d weeks</item>
+    </plurals>
+    <plurals name="months">
+        <item quantity="one">%d month</item>
+        <item quantity="other">%d months</item>
+    </plurals>
+    <plurals name="years">
+        <item quantity="one">%d year</item>
+        <item quantity="other">%d years</item>
+    </plurals>
+</resources>

@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Authors: REDACTED, REDACTED, Quentin Surdez -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/padding"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_barrier"
+        android:layout_marginEnd="@dimen/margin_barrier"
+        app:barrierDirection="end"
+        app:constraint_referenced_ids="textName, textFirstName, textBirthdate, textNationality,
+        textOccupation, textStudentUniversity, textStudentGraduationYear, textWorkerCompany,
+        textWorkerSector, textWorkerExperience, textAdditionalEmail" />
+
+
+    <TextView
+        android:id="@+id/baseTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/main_base_title"
+        android:textAllCaps="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/textViewPadding"
+        android:text="@string/main_base_name_title"
+        android:layout_gravity="start"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/baseTitle"
+        app:layout_constraintEnd_toStartOf="@id/barrier"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintBaseline_toBaselineOf="@id/editName"/>
+
+    <EditText
+        android:id="@+id/editName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/main_base_name_title"
+        android:inputType="text"
+        app:layout_constraintStart_toEndOf="@id/barrier"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/baseTitle" />
+
+    <TextView
+        android:id="@+id/textFirstName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/textViewPadding"
+        android:text="@string/main_base_firstname_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textName"
+        app:layout_constraintEnd_toStartOf="@id/barrier"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editFirstName"
+        />
+
+    <EditText
+        android:id="@+id/editFirstName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/main_base_firstname_title"
+        android:inputType="text"
+        app:layout_constraintStart_toEndOf="@id/barrier"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editName" />
+
+    <TextView
+        android:id="@+id/textBirthdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/textViewPadding"
+        android:text="@string/main_base_birthdate_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textFirstName"
+        app:layout_constraintEnd_toStartOf="@id/barrier"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editBirthdate"   />
+
+    <EditText
+        android:id="@+id/editBirthdate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:cursorVisible="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        app:layout_constraintStart_toEndOf="@id/barrier"
+        app:layout_constraintEnd_toStartOf="@id/toggleButtonBirthdate"
+        app:layout_constraintTop_toBottomOf="@id/editFirstName" />
+
+    <!-- Need to have the value of weight and height in dimen or find another way to make it fit ! -->
+    <ToggleButton
+        android:id="@+id/toggleButtonBirthdate"
+        android:layout_width="50dp"
+        android:layout_weight="1"
+        android:layout_height="46dp"
+        android:drawableStart="@drawable/cake"
+        android:textOff=""
+        android:textOn=""
+        android:layout_gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBaseline_toBaselineOf="@id/editBirthdate" />
+
+    <TextView
+        android:id="@+id/textNationality"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/textViewPadding"
+        android:text="@string/main_base_nationality_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textBirthdate"
+        app:layout_constraintEnd_toStartOf="@id/barrier"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintBaseline_toBaselineOf="@+id/nationalitySpinner" />
+
+
+    <Spinner
+        android:id="@+id/nationalitySpinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/textViewPadding"
+        android:entries="@array/nationalities"
+        app:layout_constraintStart_toEndOf="@id/barrier"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editBirthdate" />
+
+    <TextView
+        android:id="@+id/textOccupation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/textViewPadding"
+        android:text="@string/main_base_occupation_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nationalitySpinner"
+        app:layout_constraintEnd_toStartOf="@id/barrier"
+        app:layout_constraintHorizontal_bias="0.0" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupOccupation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textOccupation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0">
+
+        <RadioButton
+            android:id="@+id/buttonStudent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/radioButtonPadding"
+            android:text="@string/main_base_occupation_student" />
+
+        <RadioButton
+            android:id="@+id/buttonWorker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/radioButtonPadding"
+            android:text="@string/main_base_occupation_worker" />
+
+    </RadioGroup>
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/groupStudent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_margin="@dimen/padding"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textStudentGraduationYear"
+        app:constraint_referenced_ids="baseStudentTitle, textStudentUniversity,
+        editStudentUniversity, textStudentGraduationYear, editStudentGraduationYear" />
+
+    <TextView
+        android:id="@+id/baseStudentTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/main_specific_students_title"
+        android:textAllCaps="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/radioGroupOccupation" />
+
+    <TextView
+        android:id="@+id/textStudentUniversity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/textViewPadding"
+        android:text="@string/main_specific_school_title"
+        app:layout_constraintEnd_toStartOf="@id/barrier"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/baseStudentTitle"
+        app:layout_constraintBaseline_toBaselineOf="@id/editStudentUniversity"/>
+
+    <EditText
+        android:id="@+id/editStudentUniversity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/main_specific_school_title"
+        android:inputType="text"
+        app:layout_constraintStart_toEndOf="@id/barrier"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/baseStudentTitle" />
+
+    <TextView
+        android:id="@+id/textStudentGraduationYear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/textViewPadding"
+        android:text="@string/main_specific_graduationyear_title"
+        app:layout_constraintEnd_toStartOf="@id/barrier"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textStudentUniversity"
+        app:layout_constraintBaseline_toBaselineOf="@id/editStudentGraduationYear" />
+
+    <EditText
+        android:id="@+id/editStudentGraduationYear"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/main_specific_graduationyear_title"
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@id/barrier"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editStudentUniversity" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/groupWorker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_margin="@dimen/padding"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textWorkerExperience"
+        app:constraint_referenced_ids="baseWorkerTitle, textWorkerCompany, editWorkerCompany,
+        textWorkerSector, sectorSpinner, textWorkerExperience, editWorkerExperience" />
+
+    <TextView
+        android:id="@+id/baseWorkerTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/main_specific_workers_title"
+        android:textAllCaps="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/radioGroupOccupation" />
+
+    <TextView
+        android:id="@+id/textWorkerCompany"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/textViewPadding"
+        android:text="@string/main_specific_compagny_title"
+        app:layout_constraintEnd_toStartOf="@id/barrier"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/baseWorkerTitle"
+        app:layout_constraintBaseline_toBaselineOf="@id/editWorkerCompany"/>
+
+    <EditText
+        android:id="@+id/editWorkerCompany"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/main_specific_compagny_title"
+        android:inputType="text"
+        app:layout_constraintStart_toEndOf="@id/barrier"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/baseWorkerTitle" />
+
+    <TextView
+        android:id="@+id/textWorkerSector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/textViewPadding"
+        android:text="@string/main_specific_sector_title"
+        app:layout_constraintEnd_toStartOf="@id/barrier"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textWorkerCompany"
+        app:layout_constraintBaseline_toBaselineOf="@id/sectorSpinner"/>
+
+    <Spinner
+        android:id="@+id/sectorSpinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:entries="@array/sectors"
+        android:prompt="@string/sectors_empty"
+        app:layout_constraintStart_toEndOf="@id/barrier"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editWorkerCompany" />
+
+    <TextView
+        android:id="@+id/textWorkerExperience"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/textViewPadding"
+        android:text="@string/main_specific_experience_title"
+        app:layout_constraintEnd_toStartOf="@id/barrier"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textWorkerSector"
+        app:layout_constraintBaseline_toBaselineOf="@id/editWorkerExperience"/>
+
+    <EditText
+        android:id="@+id/editWorkerExperience"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/main_specific_experience_title"
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@id/barrier"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sectorSpinner" />
+
+    <!-- Edit the constraint top to bottom of when occupation is selected -->
+    <TextView
+        android:id="@+id/textAdditionalTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/additional_title"
+        android:textAllCaps="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/radioGroupOccupation" />
+
+    <TextView
+        android:id="@+id/textAdditionalEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/textViewPadding"
+        android:text="@string/additional_email_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textAdditionalTitle"
+        app:layout_constraintEnd_toStartOf="@id/barrier"
+        app:layout_constraintBaseline_toBaselineOf="@id/editAdditionalEmail"
+        app:layout_constraintHorizontal_bias="0.0" />
+
+    <EditText
+        android:id="@+id/editAdditionalEmail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/additional_email_title"
+        android:inputType="textEmailAddress"
+        app:layout_constraintStart_toEndOf="@id/barrier"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textAdditionalTitle" />
+
+    <TextView
+        android:id="@+id/textAdditionalRemark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/textViewPadding"
+        android:text="@string/additional_remarks_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textAdditionalEmail"
+        app:layout_constraintEnd_toStartOf="@id/barrier"
+        app:layout_constraintHorizontal_bias="0.0" />
+
+    <EditText
+        android:id="@+id/editAdditionalRemark"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:minLines="3"
+        android:maxLines="5"
+        android:inputType="textMultiLine|textCapSentences|textAutoComplete|textAutoCorrect"
+        android:gravity="top|start"
+        android:imeOptions="flagNoEnterAction"
+        android:scrollbars="vertical"
+        android:overScrollMode="always"
+        android:layout_margin="@dimen/textViewPadding"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textAdditionalRemark" />
+
+    <Button
+        android:id="@+id/buttonCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/textViewPadding"
+        android:text="@string/btn_cancel"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/buttonOk"
+        app:layout_constraintTop_toBottomOf="@id/editAdditionalRemark" />
+
+    <Button
+        android:id="@+id/buttonOk"
+        android:layout_width="wrap_content"
+        android:layout_margin="@dimen/textViewPadding"
+        android:text="@string/btn_ok"
+        android:layout_height="wrap_content"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintLeft_toRightOf="@id/buttonCancel"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editAdditionalRemark" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

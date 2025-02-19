@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Authors: REDACTED, REDACTED, Quentin Surdez -->
+    <dimen name="touchable_item_height">48sp</dimen>
+    <dimen name="general_margin">8dp</dimen>
+    <dimen name="icon_size">40dp</dimen>
+</resources>

@@ -1,0 +1,7 @@
+code/.idea
+code/app/.classpath
+code/app/.project
+code/app/.settings
+code/.project
+code/.settings/org.eclipse.buildship.core.prefs
+code/kls_database.db

@@ -1,0 +1,57 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="@dimen/touchable_item_height"
+                                                   android:layout_margin="@dimen/general_margin">
+
+    <ImageView
+            android:id="@+id/note_icon"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:contentDescription="@string/icon_note_description"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginEnd="@dimen/general_margin"
+            tools:scaleType="centerCrop"
+            tools:src="@drawable/shopping"
+            tools:tint="@color/grey"/>
+
+    <TextView
+            android:id="@+id/note_text_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="@string/note_text_title_default"
+            app:layout_constraintStart_toEndOf="@id/note_icon"
+            app:layout_constraintEnd_toStartOf="@id/note_text_schedule"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginEnd="@dimen/general_margin"/>
+
+    <TextView
+            android:id="@+id/note_text_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/note_text_description_default"
+            app:layout_constraintStart_toEndOf="@id/note_icon"
+            app:layout_constraintEnd_toStartOf="@id/note_text_schedule"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginEnd="@dimen/general_margin"/>
+
+    <TextView
+            android:id="@+id/note_text_schedule"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/note_text_schedule_default"
+            android:drawableTop="@drawable/clock"
+            android:drawableTint="@color/grey"
+            android:gravity="center_horizontal"
+            android:drawablePadding="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintWidth_percent="0.2"
+            android:layout_marginEnd="@dimen/general_margin"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
